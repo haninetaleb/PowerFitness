@@ -28,6 +28,10 @@
       <div class="class_booking">
         <h2>Class Booking</h2>
         <br /><br />
+        
+        <div id="error-message" class="error"></div>
+        <div id="success-message" class="success"></div>
+        
         <form id="bookingForm" action="res.php" method="post">
           <label for="name"><b>Full Name :</b></label>
           <input
@@ -63,15 +67,6 @@
           <label for="date"><b>Class Date :</b></label>
           <input type="date" id="Date" name="Date" required />
           <span class="error" id="dateError"></span><br /><br />
-
-          <div id="error-message">
-            <script>
-              const errorMessage = document.getElementById("error-message");
-              if (errorMessage) {
-                errorMessage.innerHTML = "<p>" + $error + "</p>";
-              }
-            </script>
-          </div>
 
           <label for="time"><b>Class Time :</b></label>
           <input type="time" id="Time" name="Time" required readonly />
@@ -142,6 +137,18 @@
           const time = selectedOption.getAttribute("data-time");
           document.getElementById("Time").value = time;
         });
+            window.onload = function () {
+        const params = new URLSearchParams(window.location.search);
+        const errorMessage = params.get("error");
+        const successMessage = params.get("success");
+        if (errorMessage) {
+          document.getElementById("error-message").textContent =
+            decodeURIComponent(errorMessage);
+        } else if (successMessage) {
+          document.getElementById("success-message").textContent =
+            "Class booked successfully!";
+        }
+      };
     </script>
   </body>
 </html>
