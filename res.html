@@ -28,10 +28,17 @@
       <div class="class_booking">
         <h2>Class Booking</h2>
         <br /><br />
+<<<<<<< HEAD
 
         <div id="error-message" class="error"></div>
         <div id="success-message" class="success"></div>
 
+=======
+        
+        <div id="error-message" class="error"></div>
+        <div id="success-message" class="success"></div>
+        
+>>>>>>> 222bb12835d4240b6318d44b3a683750b104087b
         <form id="bookingForm" action="res.php" method="post">
           <label for="name"><b>Full Name :</b></label>
           <input
@@ -137,8 +144,12 @@
           const time = selectedOption.getAttribute("data-time");
           document.getElementById("Time").value = time;
         });
+<<<<<<< HEAD
 
       window.onload = function () {
+=======
+            window.onload = function () {
+>>>>>>> 222bb12835d4240b6318d44b3a683750b104087b
         const params = new URLSearchParams(window.location.search);
         const errorMessage = params.get("error");
         const successMessage = params.get("success");

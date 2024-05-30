@@ -18,8 +18,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['book'])) {
     $Time = $mysqli->real_escape_string(trim($_POST['Time']));
     $ClassName = $mysqli->real_escape_string(trim($_POST['ClassName']));
 
+<<<<<<< HEAD
     
     $currentDate = new DateTime();
+=======
+   $currentDate = new DateTime();
+>>>>>>> 222bb12835d4240b6318d44b3a683750b104087b
     $classDate = DateTime::createFromFormat('Y-m-d', $Date);
     if ($classDate < $currentDate) {
         $error = 'Veuillez entrer une date valide. La date de la classe ne peut pas être dans le passé.';
@@ -42,6 +46,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['book'])) {
         $stmt->close();
         $mysqli->close();
     }
+<<<<<<< HEAD
 
+=======
+>>>>>>> 222bb12835d4240b6318d44b3a683750b104087b
     
 ?>

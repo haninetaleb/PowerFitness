@@ -22,13 +22,19 @@
     margin: auto;
     padding: 5rem 1rem;
 }
+<<<<<<< HEAD
 
+=======
+>>>>>>> 222bb12835d4240b6318d44b3a683750b104087b
 
 a{
     text-decoration: none;
 }
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> 222bb12835d4240b6318d44b3a683750b104087b
 body{
     font-family: "Poppins", sans-serif;
     background-color: var(--primary-color);
@@ -143,9 +149,17 @@ nav{
 
     .error {
         color: red;
+<<<<<<< HEAD
         font-weight: bold;
     }
     .success {
         color: green;
         font-weight: bold;
     }
+=======
+    }
+.success {
+     color: green;
+     font-weight: bold;
+}
+>>>>>>> 222bb12835d4240b6318d44b3a683750b104087b
