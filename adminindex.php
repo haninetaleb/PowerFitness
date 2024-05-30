@@ -48,20 +48,12 @@ if (!isset($_SESSION['isAdmin']) || !$_SESSION['isAdmin']) {
     </div>
     <script>
         let btn = document.querySelector('#btn')
-        let sidebar = document.querySelector('.sidebar')
-<<<<<<< HEAD
-=======
-
         btn.onclick = function() {
         sidebar.classList.toggle('active');
         } 
     </script>
->>>>>>> 222bb12835d4240b6318d44b3a683750b104087b
 
-        btn.onclick = function() {
-        sidebar.classList.toggle('active');
-        } 
-    </script>
+
 
   <header class="header_container">
     <h1>Welcome to the Admin Panel</h1>
