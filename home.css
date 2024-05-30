@@ -197,26 +197,6 @@ nav{
     gap: 2rem;
 }
 
-.explore__nav{
-    display: flex;
-    align-items: center;
-    gap: 2rem;
-}
-
-.explore__nav span{
-    padding: 0 6px;
-    font-size: 1.5rem;
-    color: var(--white);
-    border: 2px solid var(--white);
-    border-radius: 100%;
-    cursor: pointer;
-    transition: .3s;
-}
-
-.explore__nav span:hover{
-    color: var(--secondary-color);
-    border: var(--secondary-color);
-}
 
 .explore__grid{
     margin-top: 4rem;

@@ -29,6 +29,7 @@ body {
 nav{
     max-width: var(--max-width);
     margin: auto;
+    margin-right: 6rem;
     padding: 2rem 1rem;
     display: flex;
     align-items: center;
@@ -181,6 +182,7 @@ button:hover {
 .user__status{
     color: var(--text-light);
     display: none;
+    margin-left: 5rem;
 }
 
 

@@ -29,6 +29,7 @@
             <h3>Contact Us</h3>
             <p>Get in touch with us for any queries :</p>
 
+            <div id="success-message" class="success"></div>
             <input
               type="text"
               class="name"
@@ -61,6 +62,15 @@
         </div>
       </div>
 
-    <script src="community.js"></script>
+    <script>
+      window.onload = function () {
+        const params = new URLSearchParams(window.location.search);
+        const successMessage = params.get("success");
+        if (successMessage) {
+          document.getElementById("success-message").textContent =
+            "Message sent!";
+        }
+      };
+    </script>
   </body>
 </html>

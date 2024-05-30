@@ -32,11 +32,33 @@ if (!isset($_SESSION['isAdmin']) || !$_SESSION['isAdmin']) {
         <li class="link"><a href="community.html">Community</a></li>
       </ul>
     </nav>
+    <div class="sidebar">
+      <div class="user">
+        <img
+          src="Assets/pissou.jpg"
+          alt="user pfp"
+          class="user__img"
+          id="btn"
+        />
+        <div class="user__info">
+          <p class="user__name">admin@gmail.com</p>
+          <p class="user__status">Admin</p>
+        </div>
+      </div>
+    </div>
+    <script>
+        let btn = document.querySelector('#btn')
+        let sidebar = document.querySelector('.sidebar')
 
- <header class="header_container">
+        btn.onclick = function() {
+        sidebar.classList.toggle('active');
+        } 
+    </script>
+
+  <header class="header_container">
     <h1>Welcome to the Admin Panel</h1>
     <p>Here you can manage members and products:</p>
-</header>
+  </header>
     <div class="container">
         <div class="form__container">
             <h2>Add Member</h2>
@@ -86,6 +108,6 @@ if (!isset($_SESSION['isAdmin']) || !$_SESSION['isAdmin']) {
             </form>
         </div>
     </div>
-
+   
 </body>
 </html>
