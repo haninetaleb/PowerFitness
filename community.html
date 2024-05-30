@@ -31,7 +31,6 @@
 
             <div id="success-message" class="success"></div>
 
-              <div id="success-message" class="success"></div>
             <input
               type="text"
               class="name"
@@ -66,9 +65,9 @@
 
     <script>
 
-            window.onload = function () {
+       window.onload = function () {
 
-        const params = new URLSearchParams(window.location.search);
+       const params = new URLSearchParams(window.location.search);
         const successMessage = params.get("success");
         if (successMessage) {
           document.getElementById("success-message").textContent =
