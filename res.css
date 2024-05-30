@@ -142,3 +142,7 @@ nav{
     .error {
         color: red;
     }
+.success {
+     color: green;
+     font-weight: bold;
+}
