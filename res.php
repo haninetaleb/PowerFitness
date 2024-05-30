@@ -18,34 +18,28 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['book'])) {
     $Time = $mysqli->real_escape_string(trim($_POST['Time']));
     $ClassName = $mysqli->real_escape_string(trim($_POST['ClassName']));
 
-    
-    if (empty($FullName) || empty($Email) || empty($Date) || empty($Time) || empty($ClassName)) {
-        die('Veuillez remplir tous les champs');
-    }
-    $currentDate = new DateTime();
+   $currentDate = new DateTime();
     $classDate = DateTime::createFromFormat('Y-m-d', $Date);
-    
     if ($classDate < $currentDate) {
         $error = 'Veuillez entrer une date valide. La date de la classe ne peut pas être dans le passé.';
+        header("Location: res.html?error=" . urlencode($error));
+        exit();
+    }
+
+    $stmt = $mysqli->prepare("INSERT INTO reservation (FullName, Email, Date, Time, ClassName) VALUES (?, ?, ?, ?, ?)");
+    $stmt->bind_param("sssss", $FullName, $Email, $Date, $Time, $ClassName);
+
+    if ($stmt->execute()) {
+        header("Location: res.html?success=1");
+        exit();
     } else {
-        $stmt = $mysqli->prepare("INSERT INTO reservation (FullName, Email, Date, Time, ClassName) VALUES (?, ?, ?, ?, ?)");
-
-        $stmt->bind_param("sssss", $FullName, $Email, $Date, $Time, $ClassName);
-
-        if ($stmt->execute()) {
-            header("Location: res.html");
-            exit();
-        } else {
-            $error = 'Error: ' . $stmt->error;
-        }
+        $error = 'Error: ' . $stmt->error;
+        header("Location: res.html?error=" . urlencode($error));
+        exit();
+    }
 
         $stmt->close();
+        $mysqli->close();
     }
-}
-include 'res.html';
-
-if (isset($error)) {
-    echo '<p id="error">' . $error . '</p>';
-}
     
 ?>
