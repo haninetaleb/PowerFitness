@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="login.css" />
+    <link rel="shortcut icon" href="Assets/logo 2 icon.ico" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/remixicon@4.1.0/fonts/remixicon.css"
+      rel="stylesheet"
+    />
+    <title>Welcome To Power Fitness</title>
+  </head>
+  <body>
+    <nav>
+      <div class="nav__logo">
+        <a href="home.html"><img src="Assets/logo 2 (1).png" alt="logo" /></a>
+      </div>
+      <ul class="nav__links">
+        <li class="link"><a href="home.html">Home</a></li>
+        <li class="link"><a href="program.html">Program</a></li>
+        <li class="link"><a href="res.html">Reservation</a></li>
+        <li class="link"><a href="products.html">Store</a></li>
+        <li class="link"><a href="community.html">Community</a></li>
+      </ul>
+    </nav>
+    <section>
+      <span class="bg__blur"></span>
+      <div class="big__div">
+        <div class="form__container" id="signin">
+          <img
+            src="Assets/logo 2 (1).png"
+            class="form__logo"
+            alt="Create Account"
+          />
+          <form class="form" method="POST" action="login.php">
+            <input type="hidden" name="signup" value="1" />
+            <input
+              type="text"
+              class="input"
+              name="FullName"
+              placeholder="Name"
+              required
+            />
+            <input
+              type="email"
+              class="input"
+              name="Email"
+              placeholder="Email"
+              required
+            />
+            <input
+              type="number"
+              class="input"
+              name="Phone"
+              placeholder="Phone Number"
+              required
+            />
+            <input
+              type="password"
+              class="input"
+              name="Password"
+              placeholder="Password"
+              required
+            />
+            <p class="label">Birth Date:</p>
+            <input
+              type="date"
+              class="input"
+              name="BirthDate"
+              placeholder="Birth date"
+              required
+            />
+            <input
+              type="submit"
+              name="signup"
+              value="Create Account"
+              class="form__btn"
+            />
+          </form>
+          <div class="orlogin">
+            <p class="signup__label">Already have an account?</p>
+            <button class="form__btn2" onclick="hideshow()">Login</button>
+          </div>
+        </div>
+
+        <div class="form__container2" id="signin">
+          <img
+            src="Assets/logo 2 (1).png"
+            class="form__logo"
+            alt="Create Account"
+          />
+          <form class="form" method="POST" action="login.php">
+            <input
+              type="email"
+              class="input"
+              name="Email"
+              placeholder="Email"
+              required
+            />
+            <input
+              type="password"
+              class="input"
+              name="Password"
+              placeholder="Password"
+              required
+            />
+            <button type="submit" name="login" class="form__btn">Login</button>
+          </form>
+          <div class="orlogin">
+            <p class="signup__label">New to our platform?</p>
+            <button class="form__btn2" onclick="hideshow()">Sign-in</button>
+          </div>
+        </div>
+      </div>
+      <span class="bg__blur header__blur"></span>
+    </section>
+
+    <script src="login.js"></script>
+  </body>
+</html>

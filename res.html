@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="shortcut icon" href="Assets/logo 2 icon.ico" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/remixicon@4.1.0/fonts/remixicon.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="res.css" />
+    <title>Power Fitness Gym</title>
+  </head>
+  <body>
+    <nav>
+      <div class="nav__logo">
+        <a href="home.html"><img src="Assets/logo 2 (1).png" alt="logo" /></a>
+      </div>
+      <ul class="nav__links">
+        <li class="link"><a href="home.html">Home</a></li>
+        <li class="link"><a href="program.html">Program</a></li>
+        <li class="link"><a href="products.html">Store</a></li>
+        <li class="link"><a href="community.html">Community</a></li>
+      </ul>
+    </nav>
+
+    <div class="container">
+      <div class="class_booking">
+        <h2>Class Booking</h2>
+        <br /><br />
+        <form id="bookingForm" action="res.php" method="post">
+          <label for="name"><b>Full Name :</b></label>
+          <input
+            type="text"
+            id="FullName"
+            name="FullName"
+            placeholder="Name"
+            required
+          />
+          <span class="error" id="fullNameError"></span><br /><br />
+
+          <label for="email"><b>Email :</b></label>
+          <input
+            type="email"
+            id="Email"
+            name="Email"
+            placeholder="Email"
+            required
+          />
+          <span class="error" id="emailError"></span><br /><br />
+
+          <label for="class_name"><b>Class Name :</b></label>
+          <select id="ClassName" name="ClassName" required>
+            <option value="">Select a class</option>
+            <option value="Yoga" data-time="14:00">Yoga</option>
+            <option value="Pilates" data-time="15:00">Pilates</option>
+            <option value="Zumba" data-time="16:00">Zumba</option>
+            <option value="Body Attack" data-time="17:00">Body Attack</option>
+            <option value="Tabata" data-time="18:00">Tabata</option>
+          </select>
+          <span class="error" id="classNameError"></span><br /><br />
+
+          <label for="date"><b>Class Date :</b></label>
+          <input type="date" id="Date" name="Date" required />
+          <span class="error" id="dateError"></span><br /><br />
+
+          <div id="error-message">
+            <script>
+              const errorMessage = document.getElementById("error-message");
+              if (errorMessage) {
+                errorMessage.innerHTML = "<p>" + $error + "</p>";
+              }
+            </script>
+          </div>
+
+          <label for="time"><b>Class Time :</b></label>
+          <input type="time" id="Time" name="Time" required readonly />
+          <span class="error" id="timeError"></span><br /><br />
+
+          <button type="submit" class="btnBook" name="book">Book class</button>
+        </form>
+      </div>
+      <div class="image-container">
+        <img src="Assets/gym.png" alt="fitness logo" />
+      </div>
+    </div>
+    <script>
+      document
+        .getElementById("bookingForm")
+        .addEventListener("submit", function (event) {
+          let isValid = true;
+
+          // Clear previous error messages
+          document.getElementById("fullNameError").textContent = "";
+          document.getElementById("emailError").textContent = "";
+          document.getElementById("classNameError").textContent = "";
+          document.getElementById("dateError").textContent = "";
+          document.getElementById("timeError").textContent = "";
+
+          // Perform validation checks
+          const fullName = document.getElementById("FullName").value.trim();
+          const email = document.getElementById("Email").value.trim();
+          const className = document.getElementById("ClassName").value.trim();
+          const date = document.getElementById("Date").value.trim();
+          const time = document.getElementById("Time").value.trim();
+
+          if (fullName === "") {
+            document.getElementById("fullNameError").textContent =
+              "Veuillez remplir ce champ";
+            isValid = false;
+          }
+          if (email === "") {
+            document.getElementById("emailError").textContent =
+              "Veuillez remplir ce champ";
+            isValid = false;
+          }
+          if (className === "") {
+            document.getElementById("classNameError").textContent =
+              "Veuillez remplir ce champ";
+            isValid = false;
+          }
+          if (date === "") {
+            document.getElementById("dateError").textContent =
+              "Veuillez remplir ce champ";
+            isValid = false;
+          }
+          if (time === "") {
+            document.getElementById("timeError").textContent =
+              "Veuillez remplir ce champ";
+            isValid = false;
+          }
+
+          if (!isValid) {
+            event.preventDefault();
+          }
+        });
+
+      document
+        .getElementById("ClassName")
+        .addEventListener("change", function () {
+          const selectedOption = this.options[this.selectedIndex];
+          const time = selectedOption.getAttribute("data-time");
+          document.getElementById("Time").value = time;
+        });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,158 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+
+:root{
+    --primary-color: #111317;
+    --primary-color-light: #1f2125;
+    --primary-color-extra-light:#35373b;
+    --secondary-color: #fe2712;
+    --secondary-color-dark: #710c04;
+    --text-light: #d1d5db;
+    --white: #ffffff;
+    --max-width: 1200px;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: "Poppins", sans-serif;
+    background-color: var(--primary-color);
+    scroll-behavior: smooth;
+}
+
+nav{
+    max-width: var(--max-width);
+    margin: auto;
+    padding: 2rem 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    gap: 2rem;
+}
+.nav__log{
+    max-width: 150px;
+}
+
+.nav__links{
+    list-style: none;
+    display: flex;
+    align-items: center;
+    gap: 3rem;
+}
+
+.link a{
+    position: relative;
+    padding-bottom: 0.75em;
+    color: var(--white);
+}
+
+.link a:after{
+    content: "";
+    position: absolute;
+    height: 2px;
+    width: 0;
+    left: 0;
+    bottom: 0;
+    background-color: var(--secondary-color);
+    transition: 0.3s;
+}
+
+.link a:hover::after{
+    width: 100%;
+}
+
+
+
+.message__grid{
+    margin-left: 4rem;
+    display: flex;
+    gap: 2rem;
+    align-items: flex-start;
+}
+
+.message__card{
+    width: 35%;
+    padding: 3rem 2rem;
+    display: flex;
+    flex-direction: column;
+    background-color: var(--primary-color-light);
+    border: 2px solid transparent;
+    transition: 0.3s;
+    align-items: center;
+    border-radius: 10px;
+}
+.message__card__content{
+    flex: 1;
+    margin-bottom: 1rem;
+    align-items: center;
+    
+}
+
+.message__card__content input{
+    padding: 5px;
+    box-sizing: border-box;
+    border-radius: 10px;
+}
+
+.message__card h3{
+    padding-bottom: 1rem;
+    margin-bottom: 2rem;
+    font-size: 2rem;
+    font-weight: 600;
+    color: var(--white);
+    border-bottom: 2px solid var(--white);
+}
+.message__card p{
+    
+    margin-bottom: 0.75rem;
+    color: var(--white);
+}
+
+
+.send__btn{
+    color: var(--secondary-color);
+    background-color: transparent;
+    padding: 10px 20px;
+    border: 2px solid var(--secondary-color);
+    border-radius: 10px;
+    cursor: pointer;
+    margin-top: 2rem;
+    margin-right: 2.3rem;
+   
+}
+
+.send__btn:hover{
+    color: var(--white);
+    background-color: var(--secondary-color);
+}
+
+.name{
+    margin-left: 3rem;
+    margin-top: 1.5rem;
+    width: 70%;
+}
+
+.email{
+    margin-left: 3rem;
+    margin-top: 1.5rem;
+    width: 70%;
+}
+
+.message{
+    margin-left: 3rem;
+    margin-top: 1.5rem;
+    width: 70%;
+}
+.image-container {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.image-container img {
+    width: 80%;
+    border-radius: 8px;
+}

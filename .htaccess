@@ -1,0 +1,12 @@
+# Enable URL rewriting
+RewriteEngine On
+
+# Allow all methods
+<Limit GET POST PUT DELETE>
+    Allow from all
+</Limit>
+
+# Basic Error Document Configuration
+ErrorDocument 403 /403.html
+ErrorDocument 404 /404.html
+ErrorDocument 500 /500.html
