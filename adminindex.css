@@ -132,34 +132,6 @@ button:hover {
     background-color: var(--secondary-color-dark);
 }
 
-.user__img{
-    border-radius:100%;
-    width: 75px;
-    border: 1px solid;
-}
-
-.sidebar{
-    position: absolute;
-    right: 0;
-    top: 0;
-    padding: .4rem .8rem;
-    transition: all 0.5s ease;
-    z-index: 5;
-}
-
-.sidebar.active  body{
-    right: 250px;
-    max-width: calc(100%-250px);
-}
-
-.sidebar.active{
-    width: 250px;
-    background-color: var(--primary-color-light);
-    height: 100vh;
-}
-
-
-
 .user{
     display: flex;
     flex-direction: column;
@@ -179,6 +151,7 @@ button:hover {
 }
 
 .user__status{
+    margin-left: 5rem;
     color: var(--text-light);
     display: none;
 }
