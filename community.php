@@ -21,7 +21,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['send_message'])) {
     $stmt->bind_param("sss", $FullName, $Email, $Message);
 
     if ($stmt->execute()) {
-        header("Location: community.html");
+        header("Location: community.html?success=1");
         exit();
     } else {
         die('Error: ' . $stmt->error);
